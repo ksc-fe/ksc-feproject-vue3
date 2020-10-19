@@ -1,0 +1,7 @@
+node_modules/
+.vscode/
+dist/
+.git/
+.idea
+stylelint.config.js
+commitlint.config.js
