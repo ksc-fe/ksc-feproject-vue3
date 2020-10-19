@@ -4,17 +4,15 @@
 
 > #### 项目说明:
 
-```
 本项目金山云前端控制台项目模板，配合 [kscfe-cli](https://github.com/ksc-fe/ksc-fe-cli) 脚手架使用。
-```
 
 > #### 项目技术栈:
 
-- nodejs: > v12.x.x
-- vue: >v 3.0.0
-- vue-cli: > 4.5.7
-- kpc: > v1.4.3
-- stylus: v3.0
+- nodejs: ^12.x.x
+- vue: ^3.0.0
+- vue-cli: ^4.5.7
+- kpc: > ^1.4.3
+- stylus: ^0.54.7
 
 > #### 目录结构:
 
