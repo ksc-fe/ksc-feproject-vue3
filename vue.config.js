@@ -37,8 +37,7 @@ module.exports = {
     configureWebpack: {
         resolve: {
             alias: {
-                kpc: 'kpc/@stylus',
-                intact$: 'intact-vue'
+                kpc: 'kpc-vue/@stylus'
             }
         },
         module: {
@@ -84,7 +83,8 @@ module.exports = {
             ]
         }
     },
-    chainWebpack: () => {
+    chainWebpack: (config) => {
         // config.resolve.alias.set('@b', path.resolve('./src'))
+        config.resolve.alias.set('kpc-vue', 'kpc-vue/@stylus');
     }
 };
