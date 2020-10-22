@@ -1,8 +1,9 @@
 /**
  * install command: npm install --save-dev stylelint stylelint-config-standard stylelint-config-prettier stylelint-order
+ * npm install --save-dev stylelint-plugin-stylus
  * filename: stylelint.config.js
  */
-//npm command: `"lint:style": "stylelint --fix \"**/*.{vue,less,postcss,css,scss,styl}\" --cache --cache-location node_modules/.cache/stylelint/"
+//npm command: "lint:style": "stylelint --fix \"**/*.{vue,css,styl}\" --cache --cache-location node_modules/.cache/stylelint/ --custom-syntax stylelint-plugin-stylus/custom-syntax"
 
 module.exports = {
     root: true,
