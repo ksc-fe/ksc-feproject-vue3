@@ -11,7 +11,6 @@ const app = createApp(App);
 app.use(Kpc);
 app.config.devtools = true;
 app.config.productionTip = false;
-app.config.globalProperties._ = _;
 app.config.globalProperties.utils = utils;
 app.config.globalProperties.api = api;
 // app.component(/* ... */);

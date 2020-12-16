@@ -4,10 +4,10 @@ let utils = require('./scripts/utils');
 let version = utils.generateOnlineVersion();
 
 module.exports = {
-    publicPath:
-        process.env.NODE_ENV === 'production'
-            ? 'xxxx.static.com/' + version + '"/"'
-            : '',
+    publicPath: '',
+    // process.env.NODE_ENV === 'production'
+    //     ? 'xxxx.static.com/' + version + '"/"'
+    //     : '',
 
     // outputDir: 在npm run build时 生成文件的目录 type:string, default:'dist'
     outputDir: 'dist',
@@ -36,12 +36,24 @@ module.exports = {
     // // 配置插件
     configureWebpack: {
         resolve: {
+            extensions: ['.js', '.vue', '.json'],
             alias: {
+                // '@': resolve('src'),
                 kpc: 'kpc-vue/@stylus'
             }
         },
         module: {
             rules: [
+                // {
+                //     test: /\.js$/,
+                //     exclude: /node_modules/,
+                //     use: {
+                //         loader: 'babel-loader',
+                //         options: {
+                //             presets: ['preset-env']
+                //         }
+                //     }
+                // },
                 {
                     test: /\.styl$/,
                     use: [
@@ -59,16 +71,16 @@ module.exports = {
         },
         optimization: {
             minimizer: [
-                new UglifyJsPlugin({
-                    uglifyOptions: {
-                        compress: {
-                            warnings: false,
-                            drop_console: true, // console
-                            drop_debugger: false,
-                            pure_funcs: ['console.log'] // 移除console
-                        }
-                    }
-                })
+                // new UglifyJsPlugin({
+                //     uglifyOptions: {
+                //         warnings: false,
+                //         compress: {
+                //             drop_console: true, // console
+                //             drop_debugger: false,
+                //             pure_funcs: ['console.log'] // 移除console
+                //         }
+                //     }
+                // })
                 // new HtmlWebpackPlugin({
                 //     // 构建html文件
                 //     filename: './index.html',
