@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 let utils = require('./scripts/utils');
 let version = utils.generateOnlineVersion();
 
@@ -38,22 +39,11 @@ module.exports = {
         resolve: {
             extensions: ['.js', '.vue', '.json'],
             alias: {
-                // '@': resolve('src'),
                 kpc: 'kpc-vue/@stylus'
             }
         },
         module: {
             rules: [
-                // {
-                //     test: /\.js$/,
-                //     exclude: /node_modules/,
-                //     use: {
-                //         loader: 'babel-loader',
-                //         options: {
-                //             presets: ['preset-env']
-                //         }
-                //     }
-                // },
                 {
                     test: /\.styl$/,
                     use: [
@@ -70,7 +60,17 @@ module.exports = {
             ]
         },
         optimization: {
+            minimize: true,
             minimizer: [
+                new TerserPlugin({
+                    parallel: true,
+                    extractComments: false,
+                    terserOptions: {
+                        format: {
+                            comments: false
+                        }
+                    }
+                })
                 // new UglifyJsPlugin({
                 //     uglifyOptions: {
                 //         warnings: false,
